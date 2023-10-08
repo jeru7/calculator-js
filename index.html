@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
     <link rel="stylesheet" href="styles.css" />
     <title>Calculator</title>
   </head>
@@ -18,8 +22,8 @@
           <div class="screen">
             <div class="screen-text">
               <div class="screen-container">
-                <p class="prev" id="previous-text">123+4</p>
-                <p class="active" id="active-text">313213</p>
+                <p class="prev" id="previous-text"></p>
+                <p class="active" id="active-text"></p>
               </div>
             </div>
           </div>
@@ -27,33 +31,47 @@
           <div class="buttons">
             <button class="button button-c"><p>C</p></button>
             <button class="button button-del"><p>DEL</p></button>
-            <button class="button button-divide"><p>/</p></button>
-            <button class="button button-multiply"><p>*</p></button>
-            <button class="button button-7"><p>7</p></button>
-            <button class="button button-8"><p>8</p></button>
-            <button class="button button-9"><p>9</p></button>
-            <button class="button button-minus"><p>-</p></button>
-            <button class="button button-4"><p>4</p></button>
-            <button class="button button-5"><p>5</p></button>
-            <button class="button button-6"><p>6</p></button>
-            <button class="button button-plus"><p>+</p></button>
-            <button class="button button-1"><p>1</p></button>
-            <button class="button button-2"><p>2</p></button>
-            <button class="button button-3"><p>3</p></button>
-            <button class="button button-0"><p>0</p></button>
-            <button class="button button-dot"><p>.</p></button>
+            <button class="button operations">
+              <p>/</p>
+            </button>
+            <button class="button operations">
+              <p>*</p>
+            </button>
+            <button class="button numbers"><p>7</p></button>
+            <button class="button numbers"><p>8</p></button>
+            <button class="button numbers"><p>9</p></button>
+            <button class="button operations"><p>-</p></button>
+            <button class="button numbers"><p>4</p></button>
+            <button class="button numbers"><p>5</p></button>
+            <button class="button numbers"><p>6</p></button>
+            <button class="button operations"><p>+</p></button>
+            <button class="button numbers"><p>1</p></button>
+            <button class="button numbers"><p>2</p></button>
+            <button class="button numbers"><p>3</p></button>
+            <button class="button button-0 numbers"><p>0</p></button>
+            <button class="button button-dot numbers"><p>.</p></button>
             <button class="button button-equals"><p>=</p></button>
           </div>
         </div>
         <!-- History -->
         <div class="history-panel">
-          <div class="history-settings"></div>
-          <div class="history-display"></div>
+          <div class="history-settings">
+            <h2>HISTORY</h2>
+          </div>
+          <div class="history-main">
+            <button class="history-clear">
+              <span class="material-symbols-outlined"> delete </span>
+            </button>
+            <div class="history-display">
+              <p class="history-text"></p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer-section"></footer>
+    <script src="app.js"></script>
   </body>
 </html>
