@@ -1,0 +1,8 @@
+--Menu container
+    -Light/Dark mode toggler
+    -History
+        -Clear History
+
+--Main container (Calculator)
+    -Basic functions of the calculator
+
