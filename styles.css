@@ -1,24 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Obitron", sans-serif;
 }
 
+/* Variables */
+:root {
+  /* Blacks */
+  --main-black: #1b1b1b;
+  --secondary-black: #242124;
+  --third-black: #333333;
+  --fourth-black: #2b2b2a;
+  /* Whites */
+
+  /* Radius */
+  --radius-border: 0.375rem;
+}
+
+body {
+  background-color: var(--secondary-black);
+}
 /* Navigation */
 nav {
+  background-color: var(--main-black);
   width: 100%;
   height: 60px;
   padding: 8px;
   display: flex;
   justify-content: end;
-  border: 1px solid red;
 }
 
 .toggler {
+  background-color: var(--third-black);
+  border-radius: var(--radius-border);
   height: 100%;
-  width: 80px;
-  border: 1px solid red;
+  width: 100px;
+  margin-right: 12px;
+  box-shadow: rgba(77, 77, 78, 0.3) 0px 1px 2px 0px,
+    rgba(0, 0, 0, 0.15) 0px 2px 6px 2px;
 }
+
 .container {
   width: 100%;
   height: 100vh;
@@ -28,61 +52,133 @@ nav {
 }
 
 .main-container {
+  background-color: var(--fourth-black);
+  border-radius: var(--radius-border);
   width: 800px;
-  height: 500px;
+  height: 550px;
   padding: 1.125rem;
   display: grid;
   grid-template-columns: 2fr 1fr;
   column-gap: 20px;
-  border: 1px solid red;
 }
 
 /* Calculator */
 .calculator {
+  background-color: var(--third-black);
+  border-radius: var(--radius-border);
+  height: 100%;
   display: grid;
+  row-gap: 10px;
   grid-template-rows: 1fr 4fr;
   padding: 1rem;
-  border: 1px solid red;
 }
 
 /* Calculator Screen */
 .screen {
-  border: 1px solid red;
-  padding-top: 12px;
-  height: 80px;
-  text-align: right;
-  font-size: 3rem;
+  background-color: var(--secondary-black);
+  border-radius: var(--radius-border);
+  height: 90px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  font-size: 3.5rem;
+  padding: 4px;
+  box-shadow: rgba(51, 51, 52, 0.3) 0px 1px 2px 0px,
+    rgba(0, 0, 0, 0.15) 0px 2px 6px 2px;
 }
 
 .screen-text {
-  margin: 8px;
+  color: rgb(185, 185, 185);
+  margin-right: 8px;
 }
 
 /* Calculator Buttons */
+
 .buttons {
-  border: 1px solid red;
+  background-color: var(--secondary-black);
+  height: 100%;
+  width: 100%;
+  border-radius: var(--radius-border);
+  display: grid;
+  padding: 8px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.button {
+  background-color: var(--third-black);
+  border-radius: var(--radius-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(115, 115, 115);
+  font-size: 2rem;
+  box-shadow: rgba(107, 108, 109, 0.3) 0px 1px 2px 0px,
+    rgba(0, 0, 0, 0.15) 0px 2px 6px 2px;
+}
+
+.button:hover {
+  background-color: rgb(125, 121, 121);
+  color: var(--main-black);
+  box-shadow: rgba(209, 211, 212, 0.3) 0px 1px 2px 0px,
+    rgba(31, 31, 31, 0.15) 0px 1px 3px 1px;
+}
+
+.button:active {
+  box-shadow: rgb(86, 87, 88) 3px 3px 6px 0px inset,
+    rgba(50, 50, 50, 0.5) -3px -3px 6px 1px inset;
+}
+
+.button-0 {
+  grid-row: 5 / 6;
+  grid-column: -5 / -3;
+}
+
+.button-dot {
+  grid-row: 5 / 6;
+  grid-column: -3 / -2;
+}
+
+.button-equals {
+  grid-row: 4 / 6;
 }
 
 /* History */
 .history-panel {
+  background-color: var(--third-black);
+  border-radius: var(--radius-border);
   display: grid;
   grid-template-rows: 1fr 9fr;
   row-gap: 10px;
   padding: 8px;
-  border: 1px solid red;
+  box-shadow: rgba(107, 108, 109, 0.3) 0px 1px 2px 0px,
+    rgba(0, 0, 0, 0.15) 0px 2px 6px 2px;
 }
 
 .history-settings {
-  border: 1px solid red;
+  background-color: var(--secondary-black);
+  border-radius: var(--radius-border);
 }
 
 .history-display {
-  border: 1px solid red;
+  background-color: var(--secondary-black);
+  border-radius: var(--radius-border);
 }
 
+.main-container,
+.calculator,
+.buttons,
+.screen,
+.history-panel,
+.history-settings,
+.history-display {
+  box-shadow: rgba(51, 51, 52, 0.3) 0px 1px 2px 0px,
+    rgba(0, 0, 0, 0.15) 0px 2px 6px 2px;
+}
 /* Footer */
 footer {
+  background-color: var(--main-black);
   width: 100%;
   height: 45px;
-  border: 1px solid red;
 }
