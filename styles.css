@@ -92,7 +92,25 @@ nav {
   margin-right: 8px;
 }
 
+.screen-container {
+  display: flex;
+  flex-direction: column;
+}
+.prev {
+  font-size: 1rem;
+  opacity: 30%;
+  text-align: right;
+}
+
+.active {
+  opacity: 80%;
+  font-size: 3rem;
+}
+
 /* Calculator Buttons */
+button {
+  border: none;
+}
 
 .buttons {
   background-color: var(--secondary-black);
@@ -114,6 +132,7 @@ nav {
   align-items: center;
   color: rgb(115, 115, 115);
   font-size: 2rem;
+  cursor: pointer;
   box-shadow: rgba(107, 108, 109, 0.3) 0px 1px 2px 0px,
     rgba(0, 0, 0, 0.15) 0px 2px 6px 2px;
 }
