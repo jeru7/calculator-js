@@ -35,7 +35,7 @@ nav {
   justify-content: end;
 }
 
-.toggler {
+.toggler-container {
   background-color: var(--third-black);
   border-radius: var(--radius-border);
   height: 100%;
