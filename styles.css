@@ -16,8 +16,13 @@
   --fourth-black: #2b2b2a;
   --text-color: rgb(115, 115, 115);
   --secondary-text-color: rgb(185, 185, 185);
-  /* Whites */
 
+  /* Whites */
+  --main-white: #f8f8ff;
+  --secondary-white: #f2f3f4;
+  --third-white: #f5f5f5;
+  --fourth-white: #fffafa;
+  --light-mode-text: #3b3c36;
   /* Radius */
   --radius-border: 0.375rem;
 }
@@ -25,9 +30,13 @@
 body {
   background-color: var(--secondary-black);
 }
+
+nav,
+footer {
+  background-color: var(--main-black);
+}
 /* Navigation */
 nav {
-  background-color: var(--main-black);
   width: 100%;
   height: 60px;
   padding: 8px;
@@ -35,6 +44,8 @@ nav {
   justify-content: end;
 }
 
+/* Dark/Light Mode Toggler */
+/* Dark Mode */
 .toggler-container {
   background-color: var(--third-black);
   border-radius: var(--radius-border);
@@ -43,6 +54,56 @@ nav {
   margin-right: 12px;
   box-shadow: rgba(77, 77, 78, 0.3) 0px 1px 2px 0px,
     rgba(0, 0, 0, 0.15) 0px 2px 6px 2px;
+}
+
+/* Light Mode */
+
+body .light-mode,
+.screen .light-mode,
+.buttons .light-mode,
+.history-settings .light-mode,
+.history-main .light-mode,
+.history-display .light-mode {
+  background-color: var(--secondary-white);
+}
+
+nav .light-mode {
+  background-color: var(--main-white);
+  box-shadow: 0px 1px 4px -2px rgba(0, 0, 0, 0.93);
+}
+
+nav .toggler-container .light-mode,
+.calculator .light-mode,
+.button .light-mode,
+.history-panel .light-mode,
+.history-clear .light-mode {
+  background-color: var(--third-white);
+}
+
+.main-container .light-mode {
+  background-color: var(--fourth-white);
+}
+
+.screen-text .light-mode {
+  color: var(--light-mode-text);
+}
+
+.button:hover,
+.history-clear:hover {
+  background-color: rgb(223, 222, 222);
+  color: var(--main-black);
+  box-shadow: rgba(209, 211, 212, 0.3) 0px 1px 2px 0px,
+    rgba(31, 31, 31, 0.15) 0px 1px 3px 1px;
+}
+
+.button:active,
+.history-clear:active {
+  box-shadow: rgb(164, 167, 170) 3px 3px 6px 0px inset,
+    rgba(175, 169, 169, 0.5) -3px -3px 6px 1px inset;
+}
+
+footer .light-mode {
+  box-shadow: 0px -1px 4px -2px rgba(0, 0, 0, 0.93);
 }
 
 .container {
@@ -87,12 +148,16 @@ nav {
   padding: 4px;
   box-shadow: rgba(51, 51, 52, 0.3) 0px 1px 2px 0px,
     rgba(0, 0, 0, 0.15) 0px 2px 6px 2px;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .screen-text {
   color: var(--secondary-text-color);
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-top: 8px;
+  height: 100%;
 }
 
 .screen-container {
@@ -102,16 +167,16 @@ nav {
 }
 
 .prev {
+  height: 1rem;
   font-size: 1rem;
-  position: relative;
   opacity: 30%;
   text-align: right;
 }
 
 .active {
+  height: 3rem;
   opacity: 80%;
   font-size: 3rem;
-  overflow-x: auto;
 }
 
 /* Calculator Buttons */
@@ -252,7 +317,6 @@ button {
 
 /* Footer */
 footer {
-  background-color: var(--main-black);
   width: 100%;
   height: 45px;
 }
