@@ -10,62 +10,64 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Calculator</title>
   </head>
-  <body>
-    <nav>
+  <body class="containers">
+    <nav class="containers">
       <div class="toggler-container">
-        <button class="toggler"></button>
+        <button class="toggler containers"></button>
       </div>
     </nav>
-    <div class="container">
-      <div class="main-container">
+    <div class="container containers">
+      <div class="main-container containers">
         <!-- Calculator -->
-        <div class="calculator">
+        <div class="calculator containers">
           <!-- Calculator Screen -->
-          <div class="screen">
+          <div class="screen containers">
             <div class="screen-text">
-              <div class="screen-container">
+              <div class="screen-container containers">
                 <p class="prev" id="previous-text"></p>
                 <p class="active" id="active-text"></p>
               </div>
             </div>
           </div>
           <!-- Calculator Buttons -->
-          <div class="buttons">
-            <button class="button button-c"><p>C</p></button>
-            <button class="button button-del"><p>DEL</p></button>
-            <button class="button operations">
+          <div class="buttons containers">
+            <button class="button button-c containers"><p>C</p></button>
+            <button class="button button-del containers"><p>DEL</p></button>
+            <button class="button operations containers">
               <p>/</p>
             </button>
-            <button class="button operations">
+            <button class="button operations containers">
               <p>*</p>
             </button>
-            <button class="button numbers"><p>7</p></button>
-            <button class="button numbers"><p>8</p></button>
-            <button class="button numbers"><p>9</p></button>
-            <button class="button operations"><p>-</p></button>
-            <button class="button numbers"><p>4</p></button>
-            <button class="button numbers"><p>5</p></button>
-            <button class="button numbers"><p>6</p></button>
-            <button class="button operations"><p>+</p></button>
-            <button class="button numbers"><p>1</p></button>
-            <button class="button numbers"><p>2</p></button>
-            <button class="button numbers"><p>3</p></button>
-            <button class="button button-0 numbers"><p>0</p></button>
-            <button class="button button-dot numbers"><p>.</p></button>
-            <button class="button button-equals"><p>=</p></button>
+            <button class="button numbers containers"><p>7</p></button>
+            <button class="button numbers containers"><p>8</p></button>
+            <button class="button numbers containers"><p>9</p></button>
+            <button class="button operations containers"><p>-</p></button>
+            <button class="button numbers containers"><p>4</p></button>
+            <button class="button numbers containers"><p>5</p></button>
+            <button class="button numbers containers"><p>6</p></button>
+            <button class="button operations containers"><p>+</p></button>
+            <button class="button numbers containers"><p>1</p></button>
+            <button class="button numbers containers"><p>2</p></button>
+            <button class="button numbers containers"><p>3</p></button>
+            <button class="button button-0 numbers containers"><p>0</p></button>
+            <button class="button button-dot numbers containers">
+              <p>.</p>
+            </button>
+            <button class="button button-equals containers"><p>=</p></button>
           </div>
         </div>
         <!-- History -->
-        <div class="history-panel">
-          <div class="history-settings">
+        <div class="history-panel containers">
+          <div class="history-settings containers">
             <h2>HISTORY</h2>
           </div>
-          <div class="history-main">
-            <button class="history-clear">
+          <div class="history-main containers">
+            <button class="history-clear containers">
               <span class="material-symbols-outlined"> delete </span>
             </button>
-            <div class="history-display">
-              <div class="history-text">
+            <div class="history-display containers">
+              <div class="history-text containers">
                 <p class="equation"></p>
                 <p class="answer"></p>
               </div>
@@ -76,7 +78,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer-section"></footer>
+    <footer class="footer-section containers"></footer>
     <script src="app.js"></script>
   </body>
 </html>
