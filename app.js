@@ -1,6 +1,7 @@
 // Assigning Elements
 // Dark/Light Mode Toggler
 const togglerButton = document.querySelector(".toggler");
+const containers = document.querySelectorAll(".containers");
 
 // --Calculator
 // Button Elements
@@ -74,5 +75,21 @@ equalsButton.addEventListener("click", () => {
     answerHistory.innerText += eval(activeText.innerText);
 
     equalsClicked = true;
+  }
+});
+
+// Dark mode to Light mode functions
+let togglerChecker = false;
+togglerButton.addEventListener("click", () => {
+  if (togglerChecker === false) {
+    containers.forEach((container) => {
+      container.classList.add("light-mode");
+    });
+    togglerChecker = true;
+  } else {
+    containers.forEach((container) => {
+      container.classList.remove("light-mode");
+      togglerChecker = false;
+    });
   }
 });
