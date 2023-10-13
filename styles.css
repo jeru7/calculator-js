@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -112,9 +111,12 @@ nav {
 }
 
 .screen-container {
+  font-family: "Calculator", sans-serif;
+  justify-self: end;
   display: flex;
   flex-direction: column;
   padding-left: 8px;
+  width: fit-content;
 }
 
 .prev {
@@ -133,6 +135,12 @@ nav {
 /* Calculator Buttons */
 button {
   border: none;
+}
+
+.prev,
+.active,
+button p {
+  font-family: "Orbitron", sans-serif;
 }
 
 .buttons {
@@ -198,10 +206,13 @@ button {
   padding: 8px;
   box-shadow: rgba(107, 108, 109, 0.3) 0px 1px 2px 0px,
     rgba(0, 0, 0, 0.15) 0px 2px 6px 2px;
+  height: 100%;
   overflow: hidden;
 }
 
 .history-settings {
+  position: relative;
+  height: 60px;
   background-color: var(--secondary-black);
   border-radius: var(--radius-border);
   display: flex;
@@ -214,8 +225,13 @@ button {
   background-color: var(--secondary-black);
   border-radius: var(--radius-border);
   display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: end;
   flex-direction: column;
   padding: 8px;
+  overflow: hidden;
+  border: 1px solid red;
   overflow: auto;
 }
 
@@ -232,27 +248,29 @@ button {
 
 .history-display {
   display: flex;
+  width: 100%;
+  height: 100%;
   background-color: var(--secondary-black);
   border-radius: var(--radius-border);
   flex-direction: column;
   align-items: end;
   color: var(--secondary-text-color);
-  height: 100%;
   gap: 8px;
+  padding-bottom: 16px;
   margin-top: 50px;
-  padding: 8px;
   border-radius: var(--radius-border);
+  overflow: auto;
 }
 
 .equation {
-  opacity: 30%;
+  opacity: 0.3;
   font-size: 0.7rem;
   text-align: right;
 }
 
 .answer {
   font-size: 1.75rem;
-  opacity: 80%;
+  opacity: 0.8;
 }
 
 /* Mix */
@@ -267,6 +285,15 @@ button {
     rgba(0, 0, 0, 0.15) 0px 2px 6px 2px;
 }
 
+.prev,
+.active,
+button p,
+.equation,
+.answer,
+.history-settings h2 {
+  font-family: "Orbitron", sans-serif;
+}
+
 /* Footer */
 footer {
   width: 100%;
@@ -275,51 +302,60 @@ footer {
 
 /* Light Mode */
 
-body .light-mode,
-.screen .light-mode,
-.buttons .light-mode,
-.history-settings .light-mode,
-.history-main .light-mode,
-.history-display .light-mode {
+body.light-mode,
+.buttons.light-mode,
+.history-settings.light-mode,
+.history-display.light-mode,
+.history-main.light-mode {
   background-color: var(--secondary-white);
 }
 
-nav .toggler .light-mode,
-.calculator .light-mode,
-.button .light-mode,
-.history-panel .light-mode,
-.history-clear .light-mode {
+.history-main.light-mode {
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+
+.screen.light-mode {
+  background-color: rgba(163, 158, 158, 0.356);
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+
+nav .toggler.light-mode,
+.calculator.light-mode,
+.button.light-mode,
+.history-panel.light-mode,
+.history-clear.light-mode {
   background-color: var(--third-white);
 }
 
-nav .light-mode {
+nav.light-mode {
   background-color: var(--main-white);
   box-shadow: 0px 1px 4px -2px rgba(0, 0, 0, 0.93);
 }
 
-.main-container .light-mode {
+.main-container.light-mode {
   background-color: var(--fourth-white);
 }
 
-.screen-text .light-mode,
-.history-display .light-mode {
+.screen-text.light-mode,
+.history-display.light-mode {
   color: var(--light-mode-text);
 }
 
-.button:hover .light-mode,
-.history-clear:hover .light-mode {
+.button.light-mode:hover,
+.history-clear.light-mode:hover {
   background-color: rgb(223, 222, 222);
   color: var(--main-black);
   box-shadow: rgba(209, 211, 212, 0.3) 0px 1px 2px 0px,
     rgba(31, 31, 31, 0.15) 0px 1px 3px 1px;
 }
 
-.button:active .light-mode,
-.history-clear:active .light-mode {
+.button.light-mode:active,
+.history-clear.light-mode:active {
   box-shadow: rgb(164, 167, 170) 3px 3px 6px 0px inset,
     rgba(175, 169, 169, 0.5) -3px -3px 6px 1px inset;
 }
 
-footer .light-mode {
+footer.light-mode {
+  background-color: var(--main-white);
   box-shadow: 0px -1px 4px -2px rgba(0, 0, 0, 0.93);
 }
