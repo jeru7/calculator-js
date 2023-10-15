@@ -35,4 +35,4 @@ Feel free to visit the live version of the calculator: [Visit site](https://jeru
 
 - HTML
 - CSS
-- BOOSTRAP 5
+- JAVASCRIPT
