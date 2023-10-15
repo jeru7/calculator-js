@@ -30,6 +30,17 @@ body {
   background-color: var(--secondary-black);
 }
 
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  ::-webkit-scrollbar {
+    width: 0px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #888;
+  }
+}
+
 nav,
 footer {
   background-color: var(--main-black);
@@ -198,6 +209,7 @@ button p {
 
 /* History */
 .history-panel {
+  width: 100%;
   background-color: var(--third-black);
   border-radius: var(--radius-border);
   display: grid;
@@ -206,7 +218,6 @@ button p {
   padding: 8px;
   box-shadow: rgba(107, 108, 109, 0.3) 0px 1px 2px 0px,
     rgba(0, 0, 0, 0.15) 0px 2px 6px 2px;
-  height: 100%;
   overflow: hidden;
 }
 
@@ -225,13 +236,8 @@ button p {
   background-color: var(--secondary-black);
   border-radius: var(--radius-border);
   display: flex;
-  height: 100%;
-  width: 100%;
-  align-items: end;
   flex-direction: column;
   padding: 8px;
-  overflow: hidden;
-  border: 1px solid red;
   overflow: auto;
 }
 
@@ -246,20 +252,37 @@ button p {
   z-index: 2;
 }
 
-.history-display {
-  display: flex;
+.history-content {
   width: 100%;
+  flex-direction: column-reverse;
+  overflow: hidden;
+}
+
+.history-display {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: start;
+  direction: rtl;
   height: 100%;
+  width: 100%;
   background-color: var(--secondary-black);
   border-radius: var(--radius-border);
-  flex-direction: column;
-  align-items: end;
   color: var(--secondary-text-color);
+  padding-top: 50px;
+  padding-left: 8px;
   gap: 8px;
   padding-bottom: 16px;
-  margin-top: 50px;
   border-radius: var(--radius-border);
   overflow: auto;
+}
+
+.history-text {
+  direction: ltr;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
 }
 
 .equation {
@@ -271,6 +294,7 @@ button p {
 .answer {
   font-size: 1.75rem;
   opacity: 0.8;
+  padding-bottom: 4px;
 }
 
 /* Mix */
@@ -358,4 +382,24 @@ nav.light-mode {
 footer.light-mode {
   background-color: var(--main-white);
   box-shadow: 0px -1px 4px -2px rgba(0, 0, 0, 0.93);
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 768px) {
+  .container {
+    height: 100%;
+    width: 100%;
+  }
+
+  .main-container {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 1.125rem;
+  }
+
+  .history-panel {
+    height: 100%;
+  }
 }
