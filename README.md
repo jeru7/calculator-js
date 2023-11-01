@@ -12,7 +12,6 @@ Feel free to visit the live version of the calculator: [Visit site](https://jeru
 ## Features
 
 ### Dark/Light Mode
-<<<<<<< HEAD
 
 ![darklight](https://github.com/jeru7/calculator-js/assets/130896368/9e025cdd-deb0-43f4-b08f-5cb6a408fd3d)
 
@@ -20,15 +19,6 @@ Feel free to visit the live version of the calculator: [Visit site](https://jeru
 
 ![clearhistory](https://github.com/jeru7/calculator-js/assets/130896368/3447598d-45d3-4263-babe-dca138589c84)
 
-=======
-![darklight](https://github.com/jeru7/calculator-js/assets/130896368/9e025cdd-deb0-43f4-b08f-5cb6a408fd3d)
-
-### Clear History
-![clearhistory](https://github.com/jeru7/calculator-js/assets/130896368/3447598d-45d3-4263-babe-dca138589c84)
-
-
-
->>>>>>> 697e0ccc576df13e8d99ca47260c45d3946b5510
 ### Preview
 
 ### Desktop shot
