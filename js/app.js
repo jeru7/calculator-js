@@ -41,7 +41,7 @@ class Calculator {
     this.activeText.innerText += text;
   }
 
-  getOperator() {
+  getOperators(text) {
     const lastText = this.activeText.innerText.slice(-1);
     this.equalsClicked = false;
 
