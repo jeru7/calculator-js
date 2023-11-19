@@ -9,6 +9,7 @@ class Calculator {
     this.prevText = document.querySelector("#previous-text");
     this.activeText = document.querySelector("#active-text");
     this.equalsClicked = false;
+    this.containers = document.querySelectorAll(".containers");
 
     // light/dark toggler
     this.togglerBtn = document.querySelector(".toggler");
@@ -38,6 +39,8 @@ class Calculator {
     this.equalsBtn.addEventListener("click", () => this.equalsButton());
     this.deleteBtn.addEventListener("click", () => this.deleteButton());
     this.clearBtn.addEventListener("click", () => this.clearButton());
+    this.historyClearBtn.addEventListener("click", () => this.clearHistory());
+    this.togglerBtn.addEventListener("click", () => this.toggleDarkMode());
   }
 
   addToDisplay(text) {
@@ -75,6 +78,7 @@ class Calculator {
     if (this.activeText.innerText !== "") {
       if (operators.test(lastText)) {
         this.activeText.innerText = this.activeText.innerText.slice(0, -1);
+        return;
       }
 
       if (!this.equalsClicked) {
@@ -84,10 +88,12 @@ class Calculator {
 
       const equation = this.prevText.innerText;
       const answer = this.performOperation(this.activeText.innerText);
-      if (answer !== null) {
+
+      if (answer !== null || answer !== "Error") {
         this.activeText.innerText = answer;
         this.displayHistory(equation, answer);
       }
+
       this.prevText.innerText = "";
       this.prevText.innerText = this.activeText.innerText;
       this.equalsClicked = true;
@@ -101,10 +107,14 @@ class Calculator {
       }
 
       const result = new Function(`return ${expression}`)();
+
+      if (!isFinite(result)) {
+        return "Error";
+      }
       return result;
     } catch (error) {
       console.error("Invalid expression", error);
-      return null;
+      return "Error";
     }
   }
 
@@ -122,13 +132,13 @@ class Calculator {
 
     historyTextContainer.appendChild(equationElement);
     historyTextContainer.appendChild(answerElement);
-    this.displayHistory.appendChild(historyTextContainer);
+    this.historyDisplay.appendChild(historyTextContainer);
   }
 
   deleteButton() {
     this.activeText.innerText = this.activeText.innerText.slice(0, -1);
 
-    if (this.activeText.innerText === "" && !this.prevText.innerText === "") {
+    if (this.activeText.innerText === "") {
       this.prevText.innerText = "";
     }
   }
@@ -136,6 +146,16 @@ class Calculator {
   clearButton() {
     this.prevText.innerText = "";
     this.activeText.innerText = "";
+  }
+
+  clearHistory() {
+    this.historyDisplay.innerHTML = "";
+  }
+
+  toggleDarkMode() {
+    this.containers.forEach((container) => {
+      container.classList.toggle("light-mode");
+    });
   }
 }
 
